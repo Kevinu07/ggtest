@@ -1,18 +1,4 @@
-<div class="container" style="padding-top: 15px;">
-    <div class="row">
-        <div class="col-sm-6">
-            <input type="text" name="query" (input)="queryByName($event.target.value)" placeholder="Search">
-        </div>
-        <div class="col-sm-6 text-right">
-            <select (change)="onGenreChange($event.target.value)">
-                <option value="-1">-- All Genres --</option>
-                <option *ngFor="let genre of movieGenres" value={{genre.id}}>
-                    {{genre.name}}
-                </option>
-            </select>
-        </div>
-    </div>
-</div>
+<component-filterbar></component-filterbar>
 
 <div class="container">
     <ul class="row">

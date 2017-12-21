@@ -19,14 +19,12 @@ export class MovieDetailComponent implements IMovieDetail {
 
     constructor(private route: ActivatedRoute, private movieProv: MovieProvider, private appSettings: AppSettings, private _sanitizer: DomSanitizer) {
         let movieId = this.route.snapshot.params.id;
-        console.log(movieId);
         this.getMovieById(movieId);
     }
 
     getMovieById = (movieId: number): void => {
         this.movieProv.getMovieById(movieId).subscribe(data => {
             if (data){
-                console.log(data);
                 this.movie = data;
             }
         },

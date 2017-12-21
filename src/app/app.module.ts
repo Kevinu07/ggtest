@@ -9,14 +9,17 @@ import { DataProvider } from './providers/data.provider';
 import { AppSettings } from './app.settings';
 
 import { HeaderComponent } from './components/header/header.component';
+import { FilterBarComponent } from './components/filterbar/filterbar.component';
 import { MovieListComponent } from './components/movielist/movielist.component';
 import { MovieDetailComponent } from './components/moviedetail/moviedetail.component';
+import { FilterBarService } from './components/filterbar/filterbar.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    FilterBarComponent,
     MovieListComponent,
     MovieDetailComponent
   ],
@@ -25,7 +28,7 @@ import { MovieDetailComponent } from './components/moviedetail/moviedetail.compo
     HttpClientModule,
     routing
   ],
-  providers: [DataProvider, AppSettings],
+  providers: [DataProvider, AppSettings, FilterBarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
