@@ -67,18 +67,33 @@ export class MovieListComponent implements IMovieList {
 
     onGenreChange = (genreId: number) => {
         console.log(genreId);
-        this.genreId = 28;
+        this.genreId = +genreId;
         this.filterContent();
     }
 
     filterContent = () => {
         var vm = this;
 
-        if (vm.genreId !== -1){
-            vm.filteredMovies = vm.movies.filter(x => x.genre_ids.indexOf(vm.genreId) !== -1).filter(x => x.title.toLowerCase().indexOf(vm.query.toLowerCase()) !== -1);
-        } else {
+        console.log(vm.genreId);
+
+        if (vm.genreId === -1){
+            vm.filteredMovies = vm.movies;
+            console.log("here1");
+            console.log(vm.movies);
             vm.filteredMovies = vm.movies.filter(x => x.title.toLowerCase().indexOf(vm.query.toLowerCase()) !== -1);
+        } else {
+            console.log("here2");
+            console.log(vm.movies);
+            vm.filteredMovies = vm.movies.filter(x => x.genre_ids.indexOf(vm.genreId) !== -1).filter(x => x.title.toLowerCase().indexOf(vm.query.toLowerCase()) !== -1);
         }
+
+        //if (vm.genreId !== -1){
+            //vm.filteredMovies = vm.movies.filter(x => x.genre_ids.indexOf(vm.genreId) !== -1).filter(x => x.title.toLowerCase().indexOf(vm.query.toLowerCase()) !== -1);
+        // } else {
+        //     vm.filteredMovies = vm.movies;
+        //     console.log(vm.movies);
+        //     vm.filteredMovies = vm.movies.filter(x => x.title.toLowerCase().indexOf(vm.query.toLowerCase()) !== -1);
+        // }
     }
 
     getBackground = (imagePath: string): SafeStyle => {

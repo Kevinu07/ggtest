@@ -9,7 +9,7 @@ li {
 
 .movie-wrapper {
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    background-color: #3e3e3e;
+    background-color: #292b2c;
 }
 
 .titlebar {
@@ -45,4 +45,12 @@ span, p {
 
 a:hover {
     text-decoration: none;
+}
+
+select {
+    padding: 5px;
+}
+
+input {
+    padding: 0 5px;
 }

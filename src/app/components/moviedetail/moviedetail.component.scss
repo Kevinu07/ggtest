@@ -1,0 +1,29 @@
+#MovieBackground {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.custom-background {
+    background-image: radial-gradient(circle at 20% 50%, rgba(2.75%, 2.75%, 2.75%, 0.94) 0%, rgba(17.25%, 18.04%, 17.65%, 0.94) 100%);
+    width: 100%;
+    height: 100%;
+}
+
+.white {
+    color: #fff;
+}
+
+.inner-data {
+    padding-top: 30px;
+}
+
+.font-small {
+    font-size: 12px;
+}
+
+img {
+    max-width: 100%;
+}
