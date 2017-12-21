@@ -20,7 +20,6 @@ export class MovieListComponent implements IMovieList {
     movies: MovieItem[];
     filteredMovies: MovieItem[];
     movieGenres: MovieGenre[];
-    selectedGenre: MovieGenre;
 
     query: string;
     genreId: number;
@@ -53,7 +52,7 @@ export class MovieListComponent implements IMovieList {
         err => console.log(err));
     }
 
-    getMovieGenres = ():void => {
+    getMovieGenres = (): void => {
         this.movieListProv.getMovieGenres().subscribe(data => {
             if (data){
                 this.movieGenres = data.genres;
@@ -63,9 +62,9 @@ export class MovieListComponent implements IMovieList {
         err => console.log(err));
     }
 
-    getGenreNameById = (genreId[]) => {
+    getGenreNameByIds = (genreIds: number[]): string => {
         var genres = "";
-        genreId.forEach(element => {
+        genreIds.forEach(element => {
             genres += this.movieGenres.find(x => x.id == element).name;
             genres += ", ";
         });
@@ -73,17 +72,17 @@ export class MovieListComponent implements IMovieList {
         return genres;
     }
 
-    queryByName = (query: string) => {
+    queryByName = (query: string): void => {
         this.query = query;
         this.filterContent();
     }
 
-    genreChange = (genreId: number) => {
+    genreChange = (genreId: number): void => {
         this.genreId = +genreId;
         this.filterContent();
     }
 
-    filterContent = () => {
+    filterContent = (): void => {
         var vm = this;
 
         if (vm.genreId === -1){

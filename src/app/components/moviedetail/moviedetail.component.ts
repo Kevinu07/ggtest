@@ -32,7 +32,7 @@ export class MovieDetailComponent implements IMovieDetail {
     }
 
     getBackground = (imagePath: string): SafeStyle => {
-        return this._sanitizer.bypassSecurityTrustStyle("url('http://image.tmdb.org/t/p/original"+imagePath+"')");
+        return this._sanitizer.bypassSecurityTrustStyle("url('https://image.tmdb.org/t/p/original"+imagePath+"')");
     }
 }
 

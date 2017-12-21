@@ -19,15 +19,15 @@ export class FilterBarComponent implements IFilterBar {
         this.getMovieGenres();
     }
 
-    queryByName = (query: string) => {
+    queryByName = (query: string):void => {
         this.filterBarService.emitQueryChangeEvent(query);
     }
 
-    onGenreChange = (genreId: number) => {
+    onGenreChange = (genreId: number):void => {
         this.filterBarService.emitGenreChangeEvent(genreId);
     }
 
-    getMovieGenres = ():void =>{
+    getMovieGenres = ():void => {
         this.filterBarProvider.getMovieGenres().subscribe(data => {
             if (data){
                 this.movieGenres = data.genres;
