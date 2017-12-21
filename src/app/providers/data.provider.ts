@@ -8,7 +8,7 @@ export class DataProvider {
 
     }
 
-    public getData(dataUrl){
+    getData = (dataUrl) => {
         return this.http.get(dataUrl).map((response: Response) => response as any);
     }
 }

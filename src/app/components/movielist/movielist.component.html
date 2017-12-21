@@ -1,5 +1,19 @@
+<div class="row">
+    <div class="col-sm-6">
+        <input type="text" name="query" (input)="queryByName($event.target.value)">
+    </div>
+    <div class="col-sm-6">
+        <select (change)="onGenreChange($event.target.value)">
+            <option value="-1">-- Genre --</option>
+            <option *ngFor="let genre of movieGenres" value={{genre.id}}>
+                {{genre.name}}
+            </option>
+        </select>
+    </div>
+</div>
+
 <ul class="row">
-    <li *ngFor="let movie of movies" class="col-lg-4 col-md-6 col-sm-6 col-12">
+    <li *ngFor="let movie of filteredMovies" class="col-lg-4 col-md-6 col-sm-6 col-12">
         <a routerLink="/movies/{{movie.id}}">
             <div class="movie-wrapper">
                 <div class="titlebar">
@@ -11,7 +25,7 @@
                     <div class="row">
                         <div class="col-12">
                             <span class="float-left">icon <span>{{movie.release_date | date:'yyyy' }}</span></span>              
-                            <span class="float-right">{{movie.genre_ids}}</span>
+                            <span class="float-right">{{ (getGenreNameById(movie.genre_ids).length>20)? (getGenreNameById(movie.genre_ids) | slice:0:20)+'...':(getGenreNameById(movie.genre_ids)) }}</span>
                         </div>      
                     </div>
                 </div>
