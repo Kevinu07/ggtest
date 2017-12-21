@@ -1,0 +1,44 @@
+ul {
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+    padding: 15px;
+}
+
+.movie-wrapper {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    background-color: #3e3e3e;
+}
+
+.titlebar {
+    padding: 10px;
+}
+
+.title,
+.title span {
+    font-size: 16px;
+    color: #fff;
+}
+
+.image-container {
+    height: 120px;
+    background-size: cover !important;
+    background-position: center center !important;
+}
+
+.description {
+    padding: 10px;
+    height: 140px;
+}
+
+.more-info {
+    border-top: 1px solid #a9a9a9;
+    padding: 5px 10px;
+}
+
+span, p {
+    font-size: 14px;
+    color: #a9a9a9;
+}
